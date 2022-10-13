@@ -1,0 +1,80 @@
+@model IEnumerable<fids_backend.Models.FlightDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-top: 80px;">Flight Schedule</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-warning" style="margin-top:  30px;">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Flight No.
+            </th>
+            <th>
+                Airline
+            </th>
+            <th>
+                Origin
+            </th>
+            <th>
+                Departure
+            </th>
+            <th>
+                Destination
+            </th>
+            <th>
+                Arrival
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Flight Duration
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Airline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OriginIata) - @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DestinationIata) - @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightDuration)
+            </td>
+            <td>
+                @* <a asp-action="Edit" asp-route-id="@item.FlightId">Edit</a> | *@
+                @* make Edit look like a button *@
+                <a asp-action="Edit" asp-route-id="@item.FlightId" class="btn btn-primary btn-sm">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.FlightId" class="btn btn-info btn-sm">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.FlightId" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

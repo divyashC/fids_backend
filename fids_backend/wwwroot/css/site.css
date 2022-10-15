@@ -17,104 +17,125 @@ body {
   margin-bottom: 60px;
 }
 
+/*Views/Shared/_Layout.cshtml*/
+
 .logo_img {
   height: 45px;
   width: 120px;
 }
 
-/*header {*/
-/*  display: flex;*/
-/*  justify-content: flex-end;*/
-/*  align-items: center;*/
-/*  padding: 5px 40px;*/
-/*  box-shadow: 0 1px 8px #ddd;*/
-/*  transition: all 0.3s ease 0s;*/
-/*}*/
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 40px;
+  box-shadow: 0 1px 8px #ddd;
+  transition: all 0.3s ease 0s;
+}
 
-/*.logo_img {*/
-/*  height: 45px;*/
-/*  width: 120px;*/
-/*}*/
+.logo_img {
+  height: 45px;
+  width: 120px;
+}
 
-/*.fids_logo {*/
-/*  margin-right: auto;*/
-/*  margin-top: 10px;*/
-/*}*/
+.fids_logo {
+  margin-right: auto;
+  margin-top: 10px;
+}
 
-/*header li {*/
-/*  list-style: none;*/
-/*  display: inline-block;*/
-/*  padding: 0 20px;*/
-/*}*/
+header a {
+  text-decoration: none;
+  color: #555;
+  transition: all 0.3s ease 0s;
+}
 
-/*header a {*/
-/*  text-decoration: none;*/
-/*  color: #555;*/
-/*  transition: all 0.3s ease 0s;*/
-/*}*/
+header .fids_button {
+  margin-left: auto;
+  margin-top: 10px;
+}
 
-/*header .fids_button {*/
-/*  margin-left: auto;*/
-/*}*/
+.fids_button li {
+  padding: 5px;
+  list-style: none;
+}
 
-/*header .fids_button li {*/
-/*  padding: 5px;*/
-/*}*/
+.fids_button li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.3s ease 0s;
+}
 
-/*.fids_link_effect {*/
-/*  background-image: linear-gradient(*/
-/*          to right,*/
-/*          #1e3f66,*/
-/*          #245ca0 50%,*/
-/*          #000000 50%*/
-/*  );*/
-/*  background-size: 200% 100%;*/
-/*  background-position: -100%;*/
-/*  display: inline-block;*/
-/*  padding: 5px 0;*/
-/*  position: relative;*/
-/*  -webkit-background-clip: text;*/
-/*  -webkit-text-fill-color: transparent;*/
-/*  transition: all 0.3s ease-in-out;*/
-/*}*/
+.fids_link_effect {
+  background-image: linear-gradient(
+          to right,
+          #1e3f66,
+          #245ca0 50%,
+          #000000 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
 
-/*.fids_link_effect:before {*/
-/*  content: "";*/
-/*  background: #1e3f66;*/
-/*  display: block;*/
-/*  position: absolute;*/
-/*  bottom: -3px;*/
-/*  left: 0;*/
-/*  width: 0;*/
-/*  height: 3px;*/
-/*  transition: all 0.3s ease-in-out;*/
-/*}*/
+.fids_link_effect:before {
+  content: "";
+  background: #1e3f66;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
 
-/*.fids_link_effect:hover {*/
-/*  background-position: 0;*/
-/*}*/
+.fids_link_effect:hover {
+  background-position: 0;
+}
 
-/*.fids_link_effect:hover::before {*/
-/*  width: 100%;*/
-/*}*/
+.fids_link_effect:hover::before {
+  width: 100%;
+}
 
-/*.admin_portal {*/
-/*  background: #1e3f66;*/
-/*  color: #ffffff;*/
-/*  border-radius: 8px;*/
-/*  padding: 10px 20px;*/
-/*  align-items: center;*/
-/*  font-weight: bold;*/
-/*  font-size: 0.9em;*/
-/*}*/
+.fids_admin_portal {
+  background: #1e3f66;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+}
 
-/*.admin_portal:hover {*/
-/*  color: #1e3f66;*/
-/*  background: #ffffff;*/
-/*  border: 1px solid #1e3f66;*/
-/*  border-radius: 8px;*/
-/*  padding: 8px 18px;*/
-/*  align-items: center;*/
-/*  font-weight: bold;*/
-/*  font-size: 0.9em;*/
-/*}*/
+.fids_admin_portal:hover {
+  color: #1e3f66;
+  background: #ffffff;
+  border: 1px solid #1e3f66;
+  border-radius: 8px;
+  padding: 8px 18px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/*FlightDetails/Index.cshtml*/
+.top_container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/*Views/Shared/_Layout.cshtml*/
+footer .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}

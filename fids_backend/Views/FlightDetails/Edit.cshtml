@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1 style="margin-top: 50px; margin-bottom: 30px;">Edit</h1>
 
 <h4>Flight Details</h4>
 <hr />
@@ -14,67 +14,67 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="FlightId" />
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Flight No.</label>
                 <input asp-for="FlightNo" class="form-control" />
                 <span asp-validation-for="FlightNo" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Airline</label>
                 <input asp-for="Airline" class="form-control" />
                 <span asp-validation-for="Airline" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Origin</label>
                 <input asp-for="Origin" class="form-control" />
                 <span asp-validation-for="Origin" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Origin IATA Code</label>
                 <input asp-for="OriginIata" class="form-control" />
                 <span asp-validation-for="OriginIata" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Departure Time (eg: 08:30)</label>
                 <input asp-for="DepartureTime" class="form-control" />
                 <span asp-validation-for="DepartureTime" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Departure Terminal (eg: 1)</label>
                 <input asp-for="DepartureTerminal" class="form-control" />
                 <span asp-validation-for="DepartureTerminal" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label asp-for="Destination" class="control-label"></label>
                 <input asp-for="Destination" class="form-control" />
                 <span asp-validation-for="Destination" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Destination IATA Code</label>
                 <input asp-for="DestinationIata" class="form-control" />
                 <span asp-validation-for="DestinationIata" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Arrival Time (eg: 11:30)</label>
                 <input asp-for="ArrivalTime" class="form-control" />
                 <span asp-validation-for="ArrivalTime" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Arrival Terminal (eg: 5)</label>
                 <input asp-for="ArrivalTerminal" class="form-control" />
                 <span asp-validation-for="ArrivalTerminal" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Flight Date</label>
                 <input asp-for="FlightDate" class="form-control" />
                 <span asp-validation-for="FlightDate" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 10px 0;">
+            <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Flight Duration (eg: 02hrs 30mins)</label>
                 <input asp-for="FlightDuration" class="form-control" />
                 <span asp-validation-for="FlightDuration" class="text-danger"></span>
             </div>
-            <div class="form-group" style="margin: 30px 0;">
+            <div class="form-group" style="margin: 30px 0 50px 0;">
                 <input type="submit" value="Save" class="btn btn-primary" /> |
                 <a asp-action="Index" class="btn btn-secondary">Back to List</a>
             </div>

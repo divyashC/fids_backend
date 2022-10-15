@@ -19,6 +19,20 @@ namespace fids_backend.Controllers
         {
             _context = context;
         }
+        
+        // GET: api/FlightAPI/search/{search}
+        [HttpGet("search/{search}")]
+        public async Task<ActionResult<IEnumerable<FlightDetail>>> GetFlight(string search)
+        {
+            var flight = await _context.FlightDetails.Where(f => f.Origin.Contains(search) || f.Destination.Contains(search)).ToListAsync();
+
+            if (flight == null)
+            {
+                return NotFound();
+            }
+
+            return flight;
+        }
 
         // GET: api/FlightAPI
         [HttpGet]

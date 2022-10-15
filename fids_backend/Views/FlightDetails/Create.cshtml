@@ -15,52 +15,121 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Flight No.</label>
-                <input asp-for="FlightNo" class="form-control" />
+                <input asp-for="FlightNo" class="form-control" placeholder="KB150" />
                 <span asp-validation-for="FlightNo" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Airline</label>
-                <input asp-for="Airline" class="form-control" />
+                @* <input asp-for="Airline" class="form-control"/> *@
+                <select asp-for="Airline" class="form-control">
+                    <option value="-NULL-"></option>
+                    <option value="Druk Air">Druk Air</option>
+                    <option value="Bhutan Airlines">Bhutan Airlines</option>
+                </select>
                 <span asp-validation-for="Airline" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Origin</label>
-                <input asp-for="Origin" class="form-control" />
+                @* <input asp-for="Origin" class="form-control" /> *@
+                <select asp-for="Origin" class="form-control">
+                    <option value="-NULL-"></option>
+                    <option value="Bagdogra">Bagdogra</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Bumthang">Bumthang</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Gelephu">Gelephu</option>
+                    <option value="Gaya">Gaya</option>
+                    <option value="Guwahati">Guwahati</option>
+                    <option value="Kathmandu">Kathmandu</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Paro">Paro</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Yonphula">Yonphula</option>
+                </select>
                 <span asp-validation-for="Origin" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Origin IATA Code</label>
-                <input asp-for="OriginIata" class="form-control" />
+                @* <input asp-for="OriginIata" class="form-control" /> *@
+                <select asp-for="OriginIata" class="form-control">
+                    <option value="-NULL-"></option>
+                    <option value="IXB">IXB</option>
+                    <option value="BKK">BKK</option>
+                    <option value="BUM">BUM</option>
+                    <option value="DAC">DAC</option>
+                    <option value="DEL">DEL</option>
+                    <option value="GLU">GLU</option>
+                    <option value="GAY">GAY</option>
+                    <option value="GAU">GAU</option>
+                    <option value="KTM">KTM</option>
+                    <option value="CCU">CCU</option>
+                    <option value="PBH">PBH</option>
+                    <option value="SIN">SIN</option>
+                    <option value="YON">YON</option>
+                </select>
                 <span asp-validation-for="OriginIata" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
-                <label class="control-label">Departure Time (eg: 08:30)</label>
-                <input asp-for="DepartureTime" class="form-control" />
+                <label class="control-label">Departure Time</label>
+                <input asp-for="DepartureTime" class="form-control" placeholder="08:30 (24hr Format)" />
                 <span asp-validation-for="DepartureTime" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
-                <label class="control-label">Departure Terminal (eg: 1)</label>
-                <input asp-for="DepartureTerminal" class="form-control" />
+                <label class="control-label">Departure Terminal</label>
+                <input asp-for="DepartureTerminal" class="form-control" placeholder="1"/>
                 <span asp-validation-for="DepartureTerminal" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
                 <label asp-for="Destination" class="control-label"></label>
-                <input asp-for="Destination" class="form-control" />
+                @* <input asp-for="Destination" class="form-control" /> *@
+                <select asp-for="Destination" class="form-control">
+                    <option value="-NULL-"></option>
+                    <option value="Bagdogra">Bagdogra</option>
+                    <option value="Bangkok">Bangkok</option>
+                    <option value="Bumthang">Bumthang</option>
+                    <option value="Dhaka">Dhaka</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Gelephu">Gelephu</option>
+                    <option value="Gaya">Gaya</option>
+                    <option value="Guwahati">Guwahati</option>
+                    <option value="Kathmandu">Kathmandu</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Paro">Paro</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Yonphula">Yonphula</option>
+                </select>
                 <span asp-validation-for="Destination" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
                 <label class="control-label">Destination IATA Code</label>
-                <input asp-for="DestinationIata" class="form-control" />
+                @* <input asp-for="DestinationIata" class="form-control" /> *@
+                <select asp-for="DestinationIata" class="form-control">
+                    <option value="-NULL-"></option>
+                    <option value="IXB">IXB</option>
+                    <option value="BKK">BKK</option>
+                    <option value="BUM">BUM</option>
+                    <option value="DAC">DAC</option>
+                    <option value="DEL">DEL</option>
+                    <option value="GLU">GLU</option>
+                    <option value="GAY">GAY</option>
+                    <option value="GAU">GAU</option>
+                    <option value="KTM">KTM</option>
+                    <option value="CCU">CCU</option>
+                    <option value="PBH">PBH</option>
+                    <option value="SIN">SIN</option>
+                    <option value="YON">YON</option>
+                </select>
                 <span asp-validation-for="DestinationIata" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
-                <label class="control-label">Arrival Time (eg: 11:30)</label>
-                <input asp-for="ArrivalTime" class="form-control" />
+                <label class="control-label">Arrival Time</label>
+                <input asp-for="ArrivalTime" class="form-control" placeholder="11:30 (24hr Format)" />
                 <span asp-validation-for="ArrivalTime" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
-                <label class="control-label">Arrival Terminal (eg: 5)</label>
-                <input asp-for="ArrivalTerminal" class="form-control" />
+                <label class="control-label">Arrival Terminal</label>
+                <input asp-for="ArrivalTerminal" class="form-control" placeholder="5" />
                 <span asp-validation-for="ArrivalTerminal" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
@@ -69,8 +138,8 @@
                 <span asp-validation-for="FlightDate" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 20px 0;">
-                <label class="control-label">Flight Duration (eg: 02hrs 30mins)</label>
-                <input asp-for="FlightDuration" class="form-control" />
+                <label class="control-label">Flight Duration</label>
+                <input asp-for="FlightDuration" class="form-control" placeholder="02hrs 30mins"/>
                 <span asp-validation-for="FlightDuration" class="text-danger"></span>
             </div>
             <div class="form-group" style="margin: 30px 0 50px 0;">

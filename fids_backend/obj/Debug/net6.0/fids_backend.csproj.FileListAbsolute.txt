@@ -288,3 +288,5 @@
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/System.Web.Http.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/System.Web.Http.WebHost.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/System.Web.Cors.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/System.Web.Http.Cors.dll

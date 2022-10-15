@@ -17,6 +17,19 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+// app.UseCors(
+//     options => options
+//         .WithOrigins("http://localhost:3000", "http://127.0.0.1:5500", "https://fids.vercel.app/")
+//         .AllowAnyMethod().AllowAnyHeader()
+// );
+
+app.UseCors(
+    options => options
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+);
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

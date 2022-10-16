@@ -147,3 +147,45 @@ footer .container {
   justify-content: center;
   margin-bottom: 10px;
 }
+
+/*Areas/Pages/Account/Login.cshtml*/
+.form {
+  width: 35%;
+  margin: 200px auto;
+  padding: 45px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 50px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form h1 {
+  margin: 0 0 20px;
+}
+
+.form .hr1 {
+  margin: 0 0 20px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  clear: both;
+}
+
+.form input {
+  width: 100%;
+  clear: both;
+  margin: 0 0 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.login_btn_fids {
+  margin-top: 20px;
+  background: #1e3f66;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px 20px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 17px;
+}

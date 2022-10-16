@@ -21,7 +21,7 @@ namespace fids_backend.Controllers
         // GET: FlightDetails
         public async Task<IActionResult> Index()
         {
-              return _context.FlightDetails != null ? 
+            return _context.FlightDetails != null ? 
                           View(await _context.FlightDetails.ToListAsync()) :
                           Problem("Entity set 'fidsContext.FlightDetails'  is null.");
         }

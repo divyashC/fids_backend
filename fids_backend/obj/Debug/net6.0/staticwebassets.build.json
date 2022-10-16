@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kFfCHQe94qn5noGAm/H6sw/LFO8NWYVvkMZHnJaxCiA=",
+  "Hash": "08RA9G/yaNYU20GY56jKj6am7sCiD1pWWTGAfothqhY=",
   "Source": "fids_backend",
   "BasePath": "_content/fids_backend",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/obj/Debug/net6.0/scopedcss/projectbundle/fids_backend.bundle.scp.css"
     },
     {
+      "Identity": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/.DS_Store",
+      "SourceId": "fids_backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/",
+      "BasePath": "_content/fids_backend",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
       "Identity": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/css/site.css",
       "SourceId": "fids_backend",
       "SourceType": "Discovered",
@@ -1103,6 +1120,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/images/.DS_Store",
+      "SourceId": "fids_backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/",
+      "BasePath": "_content/fids_backend",
+      "RelativePath": "images/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/.DS_Store"
+    },
+    {
+      "Identity": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/images/logo-large.png",
+      "SourceId": "fids_backend",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/",
+      "BasePath": "_content/fids_backend",
+      "RelativePath": "images/logo-large.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/logo-large.png"
     },
     {
       "Identity": "/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/wwwroot/images/logo.png",

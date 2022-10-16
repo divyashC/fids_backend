@@ -14,7 +14,11 @@ namespace fids_backend.Controllers
         }
 
         public IActionResult Index()
-        {
+        {   
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "FlightDetails");
+            }
             return View();
         }
 

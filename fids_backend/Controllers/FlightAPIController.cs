@@ -30,8 +30,29 @@ namespace fids_backend.Controllers
             {
                 return NotFound();
             }
+            
+            var filteredData = new List<FlightDetail>();
+            var todaysFlights = new List<FlightDetail>();
 
-            return flight;
+            foreach (var f in flight)
+            {
+                if (f.FlightDate >= DateTime.Now)
+                {
+                    filteredData.Add(f);
+                }
+            }
+          
+            foreach (var f in flight)
+            {
+                if (f.FlightDate.Date == DateTime.Now.Date)
+                {
+                    todaysFlights.Add(f);
+                }
+            }
+          
+            todaysFlights.AddRange(filteredData);
+
+            return todaysFlights;
         }
 
         // GET: api/FlightAPI
@@ -42,7 +63,31 @@ namespace fids_backend.Controllers
           {
               return NotFound();
           }
-            return await _context.FlightDetails.ToListAsync();
+          var flightData = await _context.FlightDetails.ToListAsync();
+          
+          var filteredData = new List<FlightDetail>();
+          var todaysFlights = new List<FlightDetail>();
+
+          foreach (var flight in flightData)
+          {
+              if (flight.FlightDate >= DateTime.Now)
+              {
+                  filteredData.Add(flight);
+              }
+          }
+          
+          foreach (var flight in flightData)
+          {
+              if (flight.FlightDate.Date == DateTime.Now.Date)
+              {
+                  todaysFlights.Add(flight);
+              }
+          }
+          
+          todaysFlights.AddRange(filteredData);
+
+          return todaysFlights;
+
         }
 
         // GET: api/FlightAPI/5

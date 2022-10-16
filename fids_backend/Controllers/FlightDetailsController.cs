@@ -21,6 +21,10 @@ namespace fids_backend.Controllers
         // GET: FlightDetails
         public async Task<IActionResult> Index()
         {
+            if (!(User.Identity.IsAuthenticated))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return _context.FlightDetails != null ? 
                           View(await _context.FlightDetails.ToListAsync()) :
                           Problem("Entity set 'fidsContext.FlightDetails'  is null.");

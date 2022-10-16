@@ -34,9 +34,10 @@
     @* </nav> *@
 
     <a class='fids_logo' asp-area="" asp-controller="FlightDetails" asp-action="Index"><img class="logo_img" src="@Url.Content("~/images/logo.png")" alt="FIDS"></a>
-    <ul class="fids_button" id="button">
-        <li><a class="fids_admin_portal">Logout</a></li>
-    </ul>
+    @* <ul class="fids_button" id="button"> *@
+    @*     <li><a class="fids_admin_portal">Logout</a></li> *@
+    @* </ul> *@
+    <partial name="_LoginPartial" />
 </header>
 
 <div class="container">

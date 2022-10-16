@@ -139,3 +139,11 @@ footer .container {
   align-items: center;
   justify-content: center;
 }
+
+.login_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}

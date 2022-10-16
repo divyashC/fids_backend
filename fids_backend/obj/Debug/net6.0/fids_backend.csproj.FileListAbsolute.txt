@@ -79,7 +79,6 @@
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.DiaSymReader.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.DotNet.Scaffolding.Shared.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.EntityFrameworkCore.Sqlite.dll
-/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.Extensions.DependencyModel.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.NET.StringTools.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.VisualStudio.Debugger.Contracts.dll
@@ -290,3 +289,11 @@
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/System.Web.Cors.dll
 /Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/System.Web.Http.Cors.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.AspNetCore.Identity.UI.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.Extensions.FileProviders.Embedded.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.Extensions.Identity.Core.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/bin/Debug/net6.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/divyash/Documents/Dev/Projects/fids_backend/fids_backend/obj/Debug/net6.0/fids_backend.MvcApplicationPartsAssemblyInfo.cs

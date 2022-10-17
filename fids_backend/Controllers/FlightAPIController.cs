@@ -31,14 +31,14 @@ namespace fids_backend.Controllers
                 return NotFound();
             }
             
-            var filteredData = new List<FlightDetail>();
-            var todaysFlights = new List<FlightDetail>();
+            var dataSetA = new List<FlightDetail>(); // flight after today
+            var dataSetB = new List<FlightDetail>(); // today's flight
 
             foreach (var f in flight)
             {
                 if (f.FlightDate >= DateTime.Now)
                 {
-                    filteredData.Add(f);
+                    dataSetA.Add(f);
                 }
             }
           
@@ -46,13 +46,14 @@ namespace fids_backend.Controllers
             {
                 if (f.FlightDate.Date == DateTime.Now.Date)
                 {
-                    todaysFlights.Add(f);
+                    dataSetB.Add(f);
                 }
             }
           
-            todaysFlights.AddRange(filteredData);
-
-            return todaysFlights;
+            dataSetB.AddRange(dataSetA);
+            dataSetB = dataSetB.OrderBy(f => f.FlightDate).ToList();
+            
+            return dataSetB;
         }
 
         // GET: api/FlightAPI
@@ -65,14 +66,14 @@ namespace fids_backend.Controllers
           }
           var flightData = await _context.FlightDetails.ToListAsync();
           
-          var filteredData = new List<FlightDetail>();
-          var todaysFlights = new List<FlightDetail>();
+          var dataSetA = new List<FlightDetail>();
+          var dataSetB = new List<FlightDetail>();
 
           foreach (var flight in flightData)
           {
               if (flight.FlightDate >= DateTime.Now)
               {
-                  filteredData.Add(flight);
+                  dataSetA.Add(flight);
               }
           }
           
@@ -80,13 +81,14 @@ namespace fids_backend.Controllers
           {
               if (flight.FlightDate.Date == DateTime.Now.Date)
               {
-                  todaysFlights.Add(flight);
+                  dataSetB.Add(flight);
               }
           }
           
-          todaysFlights.AddRange(filteredData);
+          dataSetB.AddRange(dataSetA);
+          dataSetB = dataSetB.OrderBy(f => f.FlightDate).ToList();
 
-          return todaysFlights;
+          return dataSetB;
 
         }
 

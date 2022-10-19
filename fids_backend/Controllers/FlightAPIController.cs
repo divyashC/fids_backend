@@ -96,7 +96,7 @@ namespace fids_backend.Controllers
 
             foreach (var item in flight)
             {
-                if (item.FlightDate < DateTime.Now && item.FlightDate.ToString("dd/MM/yyyy") != DateTime.Now.ToString("dd/MM/yyyy"))
+                if (item.FlightDate > DateTime.Now && item.FlightDate != DateTime.Now)
                 {
                     dataSet.Add(item);
                 }
@@ -120,7 +120,7 @@ namespace fids_backend.Controllers
 
             foreach (var item in flight)
             {
-                if (item.FlightDate > DateTime.Now && item.FlightDate != DateTime.Now)
+                if (item.FlightDate.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy"))
                 {
                     dataSet.Add(item);
                 }
@@ -246,7 +246,7 @@ namespace fids_backend.Controllers
 
             foreach (var item in flight)
             {
-                if (item.FlightDate > DateTime.Now && item.FlightDate != DateTime.Now)
+                if (item.FlightDate.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy"))
                 {
                     dataSet.Add(item);
                 }

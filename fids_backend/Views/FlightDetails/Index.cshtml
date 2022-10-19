@@ -130,7 +130,7 @@
 
     @foreach (var item in flights)
     {
-        @if (item.FlightDate < DateTime.Now && item.FlightDate.ToString("dd/MM/yyyy") != DateTime.Now.ToString("dd/MM/yyyy"))
+        @if (item.FlightDate > DateTime.Now && item.FlightDate != DateTime.Now)
         {
 
             <tr style="border-bottom-color: #0c4128 ">
@@ -205,7 +205,8 @@
 
     @foreach (var item in flights)
     {
-        @if (item.FlightDate > DateTime.Now && item.FlightDate != DateTime.Now)
+       
+        @if (item.FlightDate < DateTime.Now && item.FlightDate.ToString("dd/MM/yyyy") != DateTime.Now.ToString("dd/MM/yyyy"))
         {
 
             <tr style="border-bottom-color: #0c4128 ">

@@ -86,7 +86,7 @@
     </dl>
 </div>
 <div style="margin-top: 40px;">
-    @if (Model.FlightDate < DateTime.Now)
+    @if (Model.FlightDate < DateTime.Now && Model.FlightDate.ToString("dd/MM/yyyy") != DateTime.Now.ToString("dd/MM/yyyy"))
     {
         <a asp-action="Index" class="btn btn-secondary">Back to List</a>
     }

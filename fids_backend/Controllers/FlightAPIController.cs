@@ -44,10 +44,11 @@ namespace fids_backend.Controllers
           
             foreach (var f in flight)
             {
-                if (f.FlightDate.Date == DateTime.Now.Date)
-                {
-                    dataSetB.Add(f);
-                }
+                if (f.DepartureTime.Add(new TimeSpan(0, 30, 0)) < DateTime.Now.TimeOfDay) 
+                { 
+                    continue;
+                } 
+                dataSetB.Add(f);
             }
           
             dataSetB.AddRange(dataSetA);
@@ -81,8 +82,7 @@ namespace fids_backend.Controllers
           {
               if (flight.FlightDate.Date == DateTime.Now.Date)
               {
-                  var t = DateTime.Now.TimeOfDay;
-                  if (flight.DepartureTime < t) 
+                  if (flight.DepartureTime.Add(new TimeSpan(0, 2, 0)) < DateTime.Now.TimeOfDay) 
                   { 
                       continue;
                   } 
@@ -92,8 +92,8 @@ namespace fids_backend.Controllers
           
           dataSetB.AddRange(dataSetA);
           dataSetB = dataSetB.OrderBy(f => f.FlightDate).ToList();
-
-          return dataSetB;
+          
+          return dataSetB.Take(30).ToList();
 
         }
 

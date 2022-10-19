@@ -81,6 +81,11 @@ namespace fids_backend.Controllers
           {
               if (flight.FlightDate.Date == DateTime.Now.Date)
               {
+                  var t = DateTime.Now.TimeOfDay;
+                  if (flight.DepartureTime < t) 
+                  { 
+                      continue;
+                  } 
                   dataSetB.Add(flight);
               }
           }

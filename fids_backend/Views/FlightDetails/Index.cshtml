@@ -3,15 +3,23 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var flights = Model;
+    // convert item.FlightDate to dd/mm/yyyy
+    foreach (var item in Model)
+    {
+        flights = flights.OrderBy(f => f.FlightDate).ThenBy(f => f.DepartureTime);
+    }
 }
 
 <div class="top_container">
     <h1 style="margin-top: 80px;">Flight Schedule</h1>
-    
+
     <p style="margin-top: 60px;">
         <a asp-action="Create" class="btn btn-warning" style="margin-top:  30px;">Create New</a>
     </p>
 </div>
+
+<h3 style="margin: 80px 0 30px 0;">Todays Flights</h3>
 <table class="table">
     <thead>
     <tr>
@@ -43,62 +51,201 @@
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model) 
+
+    @foreach (var item in flights)
     {
-        // for old flights make tr background color red and for upcoming flights make it white
-        var trColor = item.FlightDate < DateTime.Now ? "#D9D9D9" : "white";
-        <tr style="background-color: @trColor; border-bottom-color: #0c4128 ">
-            
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightNo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Airline)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OriginIata) - @Html.DisplayFor(modelItem => item.Origin)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DepartureTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DestinationIata) - @Html.DisplayFor(modelItem => item.Destination)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ArrivalTime)
-            </td>
-            <td>
-                @Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FlightDuration)
-            </td>
-            @if (item.FlightDate < DateTime.Now)
-            {
+        @if (item.FlightDate.ToString("dd/MM/yyyy") == DateTime.Now.ToString("dd/MM/yyyy"))
+        {
+
+            <tr style="border-bottom-color: #0c4128 ">
+
                 <td>
-                    @* <a asp-action="Index" class="btn btn-primary btn-sm" style="pointer-events: none;">Edit</a> | *@
-                    <a asp-action="Details" asp-route-id="@item.FlightId" class="btn btn-secondary btn-sm" style="margin-left: 56px">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.FlightId" class="btn btn-danger btn-sm">Delete</a>
+                    @Html.DisplayFor(modelItem => item.FlightNo)
                 </td>
-            }
-            else
-            {
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginIata) - @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartureTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinationIata) - @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+                <td>
+                    @Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightDuration)
+                </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.FlightId" class="btn btn-primary btn-sm">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.FlightId" class="btn btn-secondary btn-sm">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.FlightId" class="btn btn-danger btn-sm">Delete</a>
                 </td>
-            }
-        </tr>
+            </tr>
+        }
     }
     </tbody>
 </table>
 
-<div class="tips">
-    <h4 style="margin-top: 80px;">Note</h4>
+<h3 style="margin: 70px 0 30px 0;">Upcoming Flights</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Flight No.
+        </th>
+        <th>
+            Airline
+        </th>
+        <th>
+            Origin
+        </th>
+        <th>
+            Departure
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Arrival
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Flight Duration
+        </th>
+        <th>Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var item in flights)
+    {
+        @if (item.FlightDate < DateTime.Now && item.FlightDate.ToString("dd/MM/yyyy") != DateTime.Now.ToString("dd/MM/yyyy"))
+        {
+
+            <tr style="border-bottom-color: #0c4128 ">
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginIata) - @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartureTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinationIata) - @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+                <td>
+                    @Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightDuration)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FlightId" class="btn btn-primary btn-sm">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.FlightId" class="btn btn-secondary btn-sm">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.FlightId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        } 
+    }
+    </tbody>
+</table>
+
+<h3 style="margin: 70px 0 30px 0;">Past Flights</h3>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Flight No.
+        </th>
+        <th>
+            Airline
+        </th>
+        <th>
+            Origin
+        </th>
+        <th>
+            Departure
+        </th>
+        <th>
+            Destination
+        </th>
+        <th>
+            Arrival
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Flight Duration
+        </th>
+        <th>Operations</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    @foreach (var item in flights)
+    {
+        @if (item.FlightDate > DateTime.Now && item.FlightDate != DateTime.Now)
+        {
+
+            <tr style="border-bottom-color: #0c4128 ">
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Airline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginIata) - @Html.DisplayFor(modelItem => item.Origin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepartureTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DestinationIata) - @Html.DisplayFor(modelItem => item.Destination)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ArrivalTime)
+                </td>
+                <td>
+                    @Convert.ToDateTime(item.FlightDate).ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightDuration)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.FlightId" class="btn btn-secondary btn-sm">Details</a>
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
+
+<div class="tips" style="margin-top: 120px; margin-bottom: 90px;">
+    <h4>Note</h4>
     <ul>
-        <li>Edit button is disabled for older flights</li>
-        <li>Older flights are marked differently (Darker row background)</li>
         <li>All time are in 24 hrs format</li>
     </ul>
 </div>

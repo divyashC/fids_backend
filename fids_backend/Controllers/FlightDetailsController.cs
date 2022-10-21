@@ -17,6 +17,23 @@ namespace fids_backend.Controllers
         {
             _context = context;
         }
+        
+        public async Task<Pagination> GetFlightList(int currentPage)
+        {
+            int maxRows = 5;
+            Pagination pagination = new Pagination();
+            pagination.flightDetailsList = await (from f in _context.FlightDetails
+                orderby f.FlightDate descending
+                select f).
+                Skip((currentPage - 1) * maxRows).
+                Take(maxRows).
+                ToListAsync();
+            
+            double pageCount = (double) ((decimal) _context.FlightDetails.Count() / Convert.ToDecimal(maxRows)); 
+            pagination.pageCount = (int) Math.Ceiling(pageCount); 
+            pagination.currentPageIndex = currentPage;
+            return pagination;
+        }
 
         // GET: FlightDetails
         public async Task<IActionResult> Index()

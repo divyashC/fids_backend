@@ -57,6 +57,21 @@ namespace fids_backend.Controllers
             return dataSetB;
         }
         
+        // GET: api/FlightAPI/search/origin={origin}&destination={destination}&date={date}
+        [HttpGet("search/origin={origin}&destination={destination}&date={date}")]
+        public async Task<ActionResult<IEnumerable<FlightDetail>>> GetFlight(string origin, string destination, DateTime date)
+        {
+            var flight = await _context.FlightDetails.Where(f => f.Origin.Contains(origin) && f.Destination.Contains(destination) && f.FlightDate == date).ToListAsync();
+
+            if (flight == null)
+            {
+                return NotFound();
+            }
+            // sample api url to get flights from Gaya to Gelep on 2020-12-12
+            // https://localhost:44394/api/FlightAPI/search/origin=Gaya&destination=Gelep&date=2020-12-12
+            return flight;
+        }
+        
         // GET: api/FlightAPI/search/past/{search}
         [HttpGet("search/past/{search}")]
         public async Task<ActionResult<IEnumerable<FlightDetail>>> GetPastFlight(string search)

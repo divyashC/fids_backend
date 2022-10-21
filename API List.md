@@ -18,6 +18,8 @@
 
 8. https://localhost:7178/api/FlightAPI/search/past/{query}
 
+9. https://localhost:7178/api/FlightAPI/search/origin={query}&destination={query}&date={yyyy-mm-dd}
+
 ### Created
 
 ###### GET
